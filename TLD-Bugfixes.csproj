@@ -40,6 +40,7 @@
     <Compile Include="src\CachesNeverAddedToMapFix.cs" />
     <Compile Include="src\CustomModeSerializationFix.cs" />
     <Compile Include="src\DeterministicTorchConditionFix.cs" />
+    <Compile Include="src\ExploitableCookingSkillFix.cs" />
     <Compile Include="src\FoodPoisoningChanceFix.cs" />
     <Compile Include="src\InProgressBowEquippableFix.cs" />
     <Compile Include="src\ItemWeightFixes.cs" />
