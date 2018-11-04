@@ -23,13 +23,13 @@ namespace TLD_Bugfixes {
 		 * Even more ideally, you'd stop using *one single random object* for all of your randomness.
 		 */
 
-		private static readonly Random INDEPENDANT_RANDOM = new Random();
+		private static readonly Random INDEPENDENT_RANDOM = new Random();
 
 		private static void Prefix(GearItem __instance, ref string __state) {
 			// Save old name
 			__state = __instance.gameObject.name;
 			// Randomly salt the gameObject name
-			__instance.gameObject.name += "__TEMP__" + INDEPENDANT_RANDOM.Next();
+			__instance.gameObject.name += "__TEMP__" + INDEPENDENT_RANDOM.Next();
 		}
 
 		private static void Postfix(GearItem __instance, ref string __state) {
