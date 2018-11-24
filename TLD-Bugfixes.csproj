@@ -35,8 +35,10 @@
     <Reference Include="System" />
     <Reference Include="UnityEngine.AnimationModule" />
     <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.PhysicsModule" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\HuntingLodgeTemperatureTriggerFix.cs" />
     <Compile Include="src\CachesNeverAddedToMapFix.cs" />
     <Compile Include="src\CustomModeSerializationFix.cs" />
     <Compile Include="src\DeterministicTorchConditionFix.cs" />
