@@ -29,6 +29,7 @@ namespace TLD_Bugfixes {
 			Transform outerTransform = container?.Find(OUTER_NAME);
 			if (!innerTransform || !outerTransform || innerTransform.localPosition.x > outerTransform.localPosition.x) {
 				Debug.LogWarning("[TLD-Bugfixes] Warning: Could not apply head clothing slot fix");
+				return;
 			}
 
 			// Switch positions
