@@ -1,0 +1,37 @@
+﻿using Harmony;
+using UnityEngine;
+
+namespace TLD_Bugfixes {
+
+	/*
+	 * When an item is dropped, it always faces the same direction on the map.
+	 * This doesn't make much sense, and players have started to abuse this behavior as a compass.
+	 * Instead, items should always be rotated towards the player's view vector.
+	 */
+
+	[HarmonyPatch(typeof(Utils), "GetOrientationOnSlope")]
+	internal static class RotateDroppedGear {
+		private static void Postfix(ref Quaternion __result, Transform t, Vector3 groundNormal) {
+			Quaternion oldRotation = __result;
+			float angle = GameManager.GetPlayerTransform().localEulerAngles.y;
+			Quaternion rotateAroundNormal = Quaternion.AngleAxis(180f + angle, groundNormal);
+			__result = rotateAroundNormal * oldRotation;
+		}
+	}
+
+	/*
+	 * Alternative: Just set the item's rotation randomly.
+	 */
+
+	/*
+	[HarmonyPatch(typeof(Utils), "GetOrientationOnSlope")]
+	internal static class RandomizeDroppedGearRotation {
+
+		private static void Postfix(ref Quaternion __result, Transform t, Vector3 groundNormal) {
+			Quaternion oldRotation = __result;
+			Quaternion rotateAroundNormal = Quaternion.AngleAxis(Random.Range(0f, 360f), groundNormal);
+			__result = rotateAroundNormal * oldRotation;
+		}
+	}
+	*/
+}
