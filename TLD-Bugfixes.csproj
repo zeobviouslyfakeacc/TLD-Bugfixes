@@ -38,6 +38,7 @@
     <Reference Include="UnityEngine.PhysicsModule" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\EternalCraftingFix.cs" />
     <Compile Include="src\HuntingLodgeTemperatureTriggerFix.cs" />
     <Compile Include="src\CachesNeverAddedToMapFix.cs" />
     <Compile Include="src\CustomModeSerializationFix.cs" />
