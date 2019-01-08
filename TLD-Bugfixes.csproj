@@ -38,6 +38,7 @@
     <Reference Include="UnityEngine.PhysicsModule" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\BlueprintListScrollBarFix.cs" />
     <Compile Include="src\BreakDownMovingContainersFix.cs" />
     <Compile Include="src\EternalCraftingFix.cs" />
     <Compile Include="src\HuntingLodgeTemperatureTriggerFix.cs" />
