@@ -57,6 +57,7 @@
     <Compile Include="src\RuinedSnowShelterNotDestroyableFix.cs" />
     <Compile Include="src\SwitchedHeadClothingSlotFix.cs" />
     <Compile Include="src\TooSmallMappingObjectPoolFix.cs" />
+    <Compile Include="src\WeaponSwayFixes.cs" />
     <Compile Include="src\WildlifeRespawnFrequencyFix.cs" />
     <Compile Include="src\WrongCraftingTimeDisplayFix.cs" />
   </ItemGroup>
