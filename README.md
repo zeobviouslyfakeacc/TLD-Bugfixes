@@ -4,8 +4,12 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
 
 ### Bugs fixed:
 
+- Fixed the broken weapon inaccuracy and improved the sway animation
+  - Arrows now fly to where their tip points at
+  - The rifle sights now stay aligned and can actually be used to aim
 - Fixed the bug where the 2 head clothing slots in the clothing UI were swapped
   - For all other clothing regions, the slot closer to the character is the "inner" clothing slot
+- Fixed a bug that would move cupboard doors, shelves, and similar objects around after breaking down some object
 - Custom mode fixes:
   - Fixed the bug where the "Wildlife Respawn Frequency" setting had the exact opposite effect of what the user intended
     - Setting the respawn frequency to low would result in higher respawn frequencies, and vice versa
@@ -23,8 +27,12 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
   - There were places in that building where the temperature was several degrees lower than elsewhere for no apparent reason
 - Fixed some problems when the "Survival Monologue" was turned off in a custom mode game
   - Unlike eating, drinking was completely silent
-  - When taking medicine without treating an affliction (e.g. when drinking medicinal tea for its calories),
-    the player used to monologue about the treatment not working
+  - ~~When taking medicine without treating an affliction (e.g. when drinking medicinal tea for its calories),
+    the player used to monologue about the treatment not working~~ (Fixed in TLD v1.41!)
+- Fixed a bug where the game would call the Steam API thousands of times per second to check whether a Steam Controller is connected
+  - Previously, this bug also caused a large amount of memory allocation, but this has already been fixed
+- Fixed a bug where the game would get noticeably darker at night after opening and closing the options menu
+- Fixed a bug where the crafting recipe scroll bar had an incorrect number of steps
 
 ### Exploits fixed:
 
