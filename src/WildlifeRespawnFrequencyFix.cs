@@ -5,12 +5,14 @@ namespace TLD_Bugfixes {
 
 	/*
 	 * The "Wildlife Respawn Frequency" does exactly the opposite of what it says it does.
-	 * Selecting a  low   respawn frequency instead  reduces    the *time* between respawns, so it  increases  the respawn frequency.
-	 * Selecting a  high  respawn frequency instead  increases  the *time* between respawns, so it  decreases  the respawn frequency.
+	 * Selecting a  low   respawn frequency  decreases  the *time* between respawns, so it  increases  the respawn frequency.
+	 * Selecting a  high  respawn frequency  increases  the *time* between respawns, so it  decreases  the respawn frequency.
 	 *
-	 * This definitely qualifies for a top spot in the "dumbest bug in the game" list.
-	 * This has been reported so many times by different people, through various channels and literally takes a developer
-	 * 2 minutes to fix. Yet, over 6 months later, this bug is still in the game. This really baffles my mind.
+	 * I'm amazed how this bug has still not been fixed:
+	 * - The bug has been reported multiple times through various channels.
+	 * - It's simple to reproduce, easy to understand, and takes basically no time to fix.
+	 * - The bug has even been marked as fixed in the v1.41 update, but neither the code nor the asset files were changed,
+	 *   so after over a year, the bug is still in the game.
 	 *
 	 * See TLDP-5075.
 	 */

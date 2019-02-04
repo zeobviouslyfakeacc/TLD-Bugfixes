@@ -14,8 +14,8 @@ namespace TLD_Bugfixes {
 	 * c) Instead of rotating the weapon, the current implementation mostly just moves it around the player's face.
 	 *    This isn't realistic and doesn't even make you miss your target, thus missing the entire point of weapon sway.
 	 * d) It also discourages aiming for any amount of time. That makes sense with a bow as you can't keep the string
-	 *    drawn forever, but with a rifle, that's just bad game design.
-	 * e) Also, why can't the player keep the rifle's sights aligned for longer than 2 seconds?
+	 *    drawn forever, but with a rifle, that's just lazy game design.
+	 * e) Also, the player should be able to keep the rifle's sights aligned for longer than 2 seconds.
 	 *
 	 * To fix this, we...
 	 * - Add a new sway animation that targets the shoulder joint and uses perlin noise

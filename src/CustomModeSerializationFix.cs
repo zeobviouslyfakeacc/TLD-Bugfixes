@@ -35,9 +35,9 @@ namespace TLD_Bugfixes {
 
 			/*
 			 * Is:
-			 * num = (int) customMode.m_StartWeather * 7 + (int) customMode.m_WolfSpawnDistance * 3 + (int) customMode.m_WildlifeDetectionRange;
+			 * num -= (customMode.m_StartWeather = (CustomTunableWeather) (num / 7)) * 7;
 			 * Should be:
-			 * num = (int) customMode.m_StartWeather * 9 + (int) customMode.m_WolfSpawnDistance * 3 + (int) customMode.m_WildlifeDetectionRange;
+			 * num -= (customMode.m_StartWeather = (CustomTunableWeather) (num / 9)) * 9;
 			 */
 
 			private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
