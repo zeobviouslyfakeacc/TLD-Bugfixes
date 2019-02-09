@@ -33,6 +33,8 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
   - Previously, this bug also caused a large amount of memory allocation, but this has already been fixed
 - Fixed a bug where the game would get noticeably darker at night after opening and closing the options menu
 - Fixed a bug where the crafting recipe scroll bar had an incorrect number of steps
+- Fixed the position of the red "stamina reduction bar"
+- Fixed a bug where torches, flares, and lanterns would not increase the "feels like" temperature
 
 ### Exploits fixed:
 
