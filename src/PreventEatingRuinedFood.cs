@@ -1,5 +1,6 @@
 ﻿using System;
 using Harmony;
+using UnityEngine;
 
 namespace TLD_Bugfixes {
 
@@ -64,6 +65,42 @@ namespace TLD_Bugfixes {
 				if (rawItem.IsWornOut()) {
 					cookedItem.ForceWornOut();
 					cookedItem.UpdateDamageShader();
+				}
+			}
+		}
+
+		[HarmonyPatch(typeof(Cookable), "MaybeStartWarmingUpDueToNearbyFire", new Type[0])]
+		private static class PreventWarmingUpRuinedFood {
+
+			private static bool Prefix(Cookable __instance) {
+				GearItem gearItem = __instance.GetComponent<GearItem>();
+				return !gearItem.IsWornOut(); // Do not run original method when item is ruined
+			}
+		}
+
+		/*
+		 * Allow harvesting the cans of canned food items. The idea is that while
+		 * the food inside the can may be ruined, the can itself should still be usable.
+		 */
+
+		[HarmonyPatch(typeof(FoodItem), "Awake", new Type[0])]
+		private static class AllowBreakingDownFoodForContainer {
+
+			private static void Postfix(FoodItem __instance) {
+				GameObject item = __instance.gameObject;
+
+				if (!item.GetComponent<Harvest>() && __instance.m_GearPrefabHarvestAfterFinishEatingNormal) {
+					GearItem resultItem = __instance.m_GearPrefabHarvestAfterFinishEatingNormal.GetComponent<GearItem>();
+
+					Harvest harvest = item.AddComponent<Harvest>();
+					harvest.m_YieldGear = new GearItem[] { resultItem };
+					harvest.m_YieldGearUnits = new int[] { 1 };
+					harvest.m_DurationMinutes = 5;
+					harvest.m_Audio = "Play_OpenCan";
+
+					// Retroactively cache Harvest in GearItem
+					GearItem baseGear = __instance.GetComponent<GearItem>();
+					baseGear.m_Harvest = harvest;
 				}
 			}
 		}
