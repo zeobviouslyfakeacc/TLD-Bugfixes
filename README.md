@@ -9,7 +9,6 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
   - The rifle sights now stay aligned and can actually be used to aim
 - Fixed the bug where the 2 head clothing slots in the clothing UI were swapped
   - For all other clothing regions, the slot closer to the character is the "inner" clothing slot
-- Fixed a bug that would move cupboard doors, shelves, and similar objects around after breaking down some object
 - Custom mode fixes:
   - Fixed the bug where the "Wildlife Respawn Frequency" setting had the exact opposite effect of what the user intended
     - Setting the respawn frequency to low would result in higher respawn frequencies, and vice versa
@@ -33,8 +32,9 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
   - Previously, this bug also caused a large amount of memory allocation, but this has already been fixed
 - Fixed a bug where the game would get noticeably darker at night after opening and closing the options menu
 - Fixed a bug where the crafting recipe scroll bar had an incorrect number of steps
-- Fixed the position of the red "stamina reduction bar"
-- Fixed a bug where torches, flares, and lanterns would not increase the "feels like" temperature
+- ~~Fixed a bug that would move cupboard doors, shelves, and similar objects around after breaking down some object~~ (Fixed in TLD v1.47!)
+- ~~Fixed the position of the red "stamina reduction bar"~~ (Fixed in TLD v1.47!)
+- ~~Fixed a bug where torches, flares, and lanterns would not increase the "feels like" temperature~~ (Fixed in TLD v1.47!)
 
 ### Exploits fixed:
 
@@ -48,6 +48,7 @@ This mod fixes some old bugs and known exploits in *The Long Dark*.
   - This bug basically gave you free bows that you could craft in 0.5 hours and didn't waste any crafting materials
 - Fixed the cooking skill exploit where players could quickly level up by cooking lots of tiny pieces of meat
 - Fixed the strange food poisoning design where items at 74% condition had the same food poisoning chance as an item at 21% condition
+- Fixed the exploit where cancelling clearing an ice fishing hole would partially clear the hole without degrading the used tool
 
 ## Installation
 
