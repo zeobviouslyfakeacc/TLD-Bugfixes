@@ -13,10 +13,10 @@ namespace TLD_Bugfixes {
 	 * See TLDP-6210.
 	 */
 
-	internal static class CustomModeSerializationFix {
+	//internal static class CustomModeSerializationFix {
 
-		[HarmonyPatch(typeof(CustomExperienceModeManager), "CreateStringFromCustomMode")]
-		private static class FixSerialize {
+		//[HarmonyPatch(typeof(CustomExperienceModeManager), "CreateStringFromCustomMode")]
+		//private static class FixSerialize {
 
 			/*
 			 * Is:
@@ -25,13 +25,13 @@ namespace TLD_Bugfixes {
 			 * num = (int) customMode.m_StartWeather * 9 + (int) customMode.m_WolfSpawnDistance * 3 + (int) customMode.m_WildlifeDetectionRange;
 			 */
 
-			private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
+			/*private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 				return Replace7With9(instructions);
 			}
 		}
 
 		[HarmonyPatch(typeof(CustomExperienceModeManager), "CreateCustomModeFromString")]
-		private static class FixDeserialize {
+		private static class FixDeserialize {*/
 
 			/*
 			 * Is:
@@ -40,7 +40,7 @@ namespace TLD_Bugfixes {
 			 * num -= (customMode.m_StartWeather = (CustomTunableWeather) (num / 9)) * 9;
 			 */
 
-			private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
+			/*private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 				return Replace7With9(instructions);
 			}
 		}
@@ -61,5 +61,5 @@ namespace TLD_Bugfixes {
 				yield return cur;
 			}
 		}
-	}
+	}*/
 }

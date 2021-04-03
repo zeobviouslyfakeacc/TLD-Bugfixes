@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TLD_Bugfixes</RootNamespace>
     <AssemblyName>TLD-Bugfixes</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,40 +30,64 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp" />
-    <Reference Include="Harmony" />
-    <Reference Include="System" />
-    <Reference Include="UnityEngine.AnimationModule" />
-    <Reference Include="UnityEngine.CoreModule" />
-    <Reference Include="UnityEngine.PhysicsModule" />
+    <Reference Include="Assembly-CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MelonLoader.ModHandler, Version=0.2.7.4, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ModSettings, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="UnhollowerBaseLib, Version=0.4.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnhollowerRuntimeLib, Version=0.4.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BlueprintListScrollBarFix.cs" />
-    <Compile Include="src\EternalCraftingFix.cs" />
-    <Compile Include="src\HuntingLodgeTemperatureTriggerFix.cs" />
-    <Compile Include="src\CachesNeverAddedToMapFix.cs" />
-    <Compile Include="src\CustomModeSerializationFix.cs" />
-    <Compile Include="src\DeterministicTorchConditionFix.cs" />
-    <Compile Include="src\ExploitableCookingSkillFix.cs" />
-    <Compile Include="src\FoodPoisoningChanceFix.cs" />
-    <Compile Include="src\IceFishingHoleToolExploitFix.cs" />
-    <Compile Include="src\InProgressBowEquippableFix.cs" />
+    <Compile Include="src\Bugfixes\BlueprintListScrollBarFix.cs" />
+    <Compile Include="src\Bugfixes\HuntingLodgeTemperatureTriggerFix.cs" />
+    <Compile Include="src\Bugfixes\CachesNeverAddedToMapFix.cs" />
+    <Compile Include="src\Bugfixes\CustomModeSerializationFix.cs" />
+    <Compile Include="src\Bugfixes\DeterministicTorchConditionFix.cs" />
+    <Compile Include="src\Exploits\IceFishingHoleToolExploitFix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\IsSteamControllerActiveFix.cs" />
-    <Compile Include="src\OptionsMenuToggleMethodFix.cs" />
-    <Compile Include="src\PlayDrinkingSoundWithoutMonologue.cs" />
-    <Compile Include="src\PreventDroppedItemZFighting.cs" />
-    <Compile Include="src\PreventEatingRuinedFood.cs" />
-    <Compile Include="src\RotateDroppedGear.cs" />
-    <Compile Include="src\RuinedSnowShelterNotDestroyableFix.cs" />
-    <Compile Include="src\SwitchedHeadClothingSlotFix.cs" />
-    <Compile Include="src\TooSmallMappingObjectPoolFix.cs" />
-    <Compile Include="src\WeaponSwayFixes.cs" />
-    <Compile Include="src\WildlifeRespawnFrequencyFix.cs" />
-    <Compile Include="src\WrongCraftingTimeDisplayFix.cs" />
+    <Compile Include="src\Bugfixes\IsSteamControllerActiveFix.cs" />
+    <Compile Include="src\Bugfixes\OptionsMenuToggleMethodFix.cs" />
+    <Compile Include="src\Bugfixes\PlayDrinkingSoundWithoutMonologue.cs" />
+    <Compile Include="src\Bugfixes\PreventDroppedItemZFighting.cs" />
+    <Compile Include="src\Exploits\RotateDroppedGear.cs" />
+    <Compile Include="src\Bugfixes\TooSmallMappingObjectPoolFix.cs" />
+    <Compile Include="src\Bugfixes\WildlifeRespawnFrequencyFix.cs" />
+    <Compile Include="src\Implementation.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

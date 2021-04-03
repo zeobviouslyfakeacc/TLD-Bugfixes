@@ -10,8 +10,8 @@ namespace TLD_Bugfixes {
 	 * extinguish torches, the torches will all have the same condition (as their name, position, and scene are equal).
 	 */
 
-	[HarmonyPatch(typeof(GearItem), "OverrideGearCondition")]
-	internal static class DeterministicTorchConditionFix {
+	//[HarmonyPatch(typeof(GearItem), "OverrideGearCondition")]
+	//internal static class DeterministicTorchConditionFix {
 
 		/*
 		 * This fix isn't pretty. It relies on quite a few assumptions.
@@ -23,7 +23,7 @@ namespace TLD_Bugfixes {
 		 * Even more ideally, you'd stop using *one single random object* for all of your randomness.
 		 */
 
-		private static readonly Random INDEPENDENT_RANDOM = new Random();
+		/*private static readonly Random INDEPENDENT_RANDOM = new Random();
 
 		private static void Prefix(GearItem __instance, ref string __state) {
 			// Save old name
@@ -38,5 +38,5 @@ namespace TLD_Bugfixes {
 				__instance.gameObject.name = __state;
 			}
 		}
-	}
+	}*/
 }
