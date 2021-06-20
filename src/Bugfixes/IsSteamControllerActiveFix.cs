@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using UnityEngine;
 
 namespace TLD_Bugfixes
@@ -20,11 +20,6 @@ namespace TLD_Bugfixes
         internal static bool lastResult;
         internal static float lastUpdate;
 
-        private static void Postfix(bool __result)
-        {
-            lastResult = __result;
-        }
-
         private static bool Prefix(ref bool __result)
         {
             if (Time.realtimeSinceStartup - lastUpdate < 0.5f)
@@ -33,8 +28,14 @@ namespace TLD_Bugfixes
                 return false;
             }
 
+            //MelonLoader.MelonLogger.Log("IsSteamControllerActive");
             lastUpdate = Time.realtimeSinceStartup;
             return true;
+        }
+
+        private static void Postfix(bool __result)
+        {
+            lastResult = __result;
         }
     }
 }

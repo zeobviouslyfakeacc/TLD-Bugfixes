@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace TLD_Bugfixes {
@@ -17,7 +17,7 @@ namespace TLD_Bugfixes {
 	 * which leads to overscrolling.
 	 */
 
-	[HarmonyPatch(typeof(Panel_Log), "RefreshBlueprintsSlider")]
+	/*[HarmonyPatch(typeof(Panel_Log), "RefreshBlueprintsSlider")]
 	internal static class BlueprintListScrollBarFix {
 
 		private static bool Prefix(Panel_Log __instance, List<BlueprintItem> ___m_FilteredBlueprintItemList) {
@@ -37,5 +37,5 @@ namespace TLD_Bugfixes {
 
 			return false; // Don't run the original method
 		}
-	}
+	}*/
 }
