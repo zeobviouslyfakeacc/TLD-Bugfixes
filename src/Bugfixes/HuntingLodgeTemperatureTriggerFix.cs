@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using UnityEngine;
 
 namespace TLD_Bugfixes {
@@ -23,7 +23,7 @@ namespace TLD_Bugfixes {
 			BoxCollider collider = interiorTrigger?.GetComponent<BoxCollider>();
 
 			if (!collider) {
-				MelonLoader.MelonLogger.LogWarning("Could not fix the interior temperature in the Hunting Lodge");
+				MelonLoader.MelonLogger.Warning("Could not fix the interior temperature in the Hunting Lodge");
 				return;
 			}
 
