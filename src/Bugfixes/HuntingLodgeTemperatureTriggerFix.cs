@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using UnityEngine;
 
 namespace TLD_Bugfixes {
@@ -22,8 +22,8 @@ namespace TLD_Bugfixes {
 			GameObject interiorTrigger = GameObject.Find(TRIGGER_NAME);
 			BoxCollider collider = interiorTrigger?.GetComponent<BoxCollider>();
 
-			if (!interiorTrigger || !collider) {
-				Debug.LogWarning("[TLD-Bugfixes] Warning: Could not fix the interior temperature in the Hunting Lodge");
+			if (!collider) {
+				MelonLoader.MelonLogger.Warning("Could not fix the interior temperature in the Hunting Lodge");
 				return;
 			}
 

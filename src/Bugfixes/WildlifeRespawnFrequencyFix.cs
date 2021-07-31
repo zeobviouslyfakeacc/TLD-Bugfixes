@@ -1,5 +1,5 @@
 ﻿using System;
-using Harmony;
+using HarmonyLib;
 
 namespace TLD_Bugfixes {
 
@@ -17,13 +17,13 @@ namespace TLD_Bugfixes {
 	 * See TLDP-5075.
 	 */
 
-	[HarmonyPatch(typeof(ExperienceModeManager), "GetCustomWildlifeRespawnTimeModifier", new Type[0])]
+	/*[HarmonyPatch(typeof(ExperienceModeManager), "GetCustomWildlifeRespawnTimeModifier", new Type[0])] //inlined
 	internal static class WildlifeRespawnFrequencyFix {
 
-		/*
-		 * A method called GetCustomWildlifeRespawnTimeModifier should return a multiplier for the respawn time of a spawner.
-		 * In other words, a low respawn frequency setting should result in a large respawn time modifier.
-		 */
+		//
+		// A method called GetCustomWildlifeRespawnTimeModifier should return a multiplier for the respawn time of a spawner.
+		// In other words, a low respawn frequency setting should result in a large respawn time modifier.
+		//
 
 		private static readonly float[] RESPAWN_MODIFIERS = new[] { 2.0f, 1.0f, 0.7f, 0.5f };
 
@@ -37,5 +37,5 @@ namespace TLD_Bugfixes {
 
 			return false; // Don't run original method
 		}
-	}
+	}*/
 }

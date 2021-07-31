@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using Harmony;
+using HarmonyLib;
 
 namespace TLD_Bugfixes {
 
@@ -15,7 +15,7 @@ namespace TLD_Bugfixes {
 	 * See TLDP-6468.
 	 */
 
-	[HarmonyPatch(typeof(PlayerManager), "DrinkFromWaterSupply")]
+	/*[HarmonyPatch(typeof(PlayerManager), "DrinkFromWaterSupply")]
 	internal static class PlayDrinkingSoundWithoutMonologue {
 		private static readonly MethodBase target = AccessTools.Method(typeof(Panel_GenericProgressBar), "Launch");
 		private static readonly MethodBase replacement = AccessTools.Method(typeof(PlayDrinkingSoundWithoutMonologue), "FixArgsOrder");
@@ -33,5 +33,5 @@ namespace TLD_Bugfixes {
 			                        voiceNameShouldBeAudioName, audioNameShouldBeVoiceName,
 			                        supressHeavyBreathing, skipRestoreInHands, del);
 		}
-	}
+	}*/
 }

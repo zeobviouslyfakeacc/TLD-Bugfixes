@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace TLD_Bugfixes {
@@ -24,18 +24,18 @@ namespace TLD_Bugfixes {
 
 		private static void Prefix(Panel_Map __instance) {
 			MapDetailManager mapDetailManager = GameManager.GetMapDetailManager();
-			List<MapDetail> mapDetails = Traverse.Create(mapDetailManager).Field("m_MapDetailObjects").GetValue<List<MapDetail>>();
-			bool startCalled = Traverse.Create(__instance).Field("m_StartHasBeenCalled").GetValue<bool>();
+			var mapDetails = mapDetailManager.m_MapDetailObjects;
+			bool startCalled = __instance.m_StartHasBeenCalled;
 
 			if (startCalled) {
 				// Grow detail pool if required
-				Transform objectDetails = Traverse.Create(__instance).Field("m_DetailEntryPoolParent").GetValue<Transform>();
+				Transform objectDetails = __instance.m_DetailEntryPoolParent;
 				int detailsRequired = mapDetails.Count - objectDetails.childCount;
 
 				if (detailsRequired > 0) {
 					Panel_Map.OBJECT_POOL_SIZE = 0;
 					Panel_Map.DETAIL_POOL_SIZE = detailsRequired;
-					AccessTools.Method(typeof(Panel_Map), "CreateObjectPools").Invoke(__instance, new object[0]);
+					__instance.CreateObjectPools();
 				}
 			} else {
 				Panel_Map.DETAIL_POOL_SIZE = Math.Max(Panel_Map.DETAIL_POOL_SIZE, mapDetails.Count);
