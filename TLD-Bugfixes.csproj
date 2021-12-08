@@ -73,7 +73,6 @@
     <Compile Include="src\Bugfixes\PlayDrinkingSoundWithoutMonologue.cs" />
     <Compile Include="src\Bugfixes\PreventDroppedItemZFighting.cs" />
     <Compile Include="src\Exploits\RotateDroppedGear.cs" />
-    <Compile Include="src\Bugfixes\TooSmallMappingObjectPoolFix.cs" />
     <Compile Include="src\Bugfixes\WildlifeRespawnFrequencyFix.cs" />
     <Compile Include="src\Implementation.cs" />
   </ItemGroup>

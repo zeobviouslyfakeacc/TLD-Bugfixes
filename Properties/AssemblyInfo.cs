@@ -14,7 +14,7 @@ using MelonLoader;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("2.0.1")]
-[assembly: AssemblyFileVersion("2.0.1")]
-[assembly: MelonInfo(typeof(TLD_Bugfixes.Implementation), "TLD-Bugfixes", "2.0.1", "zeobviouslyfakeacc, ds5678")]
+[assembly: AssemblyVersion("2.1.0")]
+[assembly: AssemblyFileVersion("2.1.0")]
+[assembly: MelonInfo(typeof(TLD_Bugfixes.Implementation), "TLD-Bugfixes", "2.1.0", "zeobviouslyfakeacc, ds5678")]
 [assembly: MelonGame("Hinterland", "TheLongDark")]
